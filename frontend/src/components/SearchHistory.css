@@ -1,0 +1,50 @@
+
+.history-page {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+.history-page h1 {
+  color: #222;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.history-subtitle {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.history-list {
+  max-width: 700px;
+}
+
+.history-card {
+  background-color: white;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-card h2 {
+  margin: 0 0 6px;
+  color: #333;
+}
+
+.history-card p {
+  margin: 0;
+  color: #777;
+}
+
+.history-card span {
+  color: #555;
+  font-weight: bold;
+}
