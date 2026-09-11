@@ -1,25 +1,36 @@
+import { useEffect, useState } from "react";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const userName = "User";
-  const medicineCount = 12;
+  const [medicineCount, setMedicineCount] = useState(0);
+
+  useEffect(() => {
+    const history =
+      JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+    setMedicineCount(history.length);
+  }, []);
 
   return (
     <div className="dashboard">
-      <h1>Welcome, {userName}! 👋</h1>
+      <h1>Welcome to MediKey! 👋</h1>
 
       <p className="subtitle">
-        Welcome to MediKey Dashboard
+        Your Smart Medicine Verification Dashboard
       </p>
 
       <div className="dashboard-card">
         <h2>💊 Medicine Search</h2>
-        <p>You have checked {medicineCount} medicines.</p>
+        <p>
+          You have searched <strong>{medicineCount}</strong> medicines.
+        </p>
       </div>
 
       <div className="dashboard-card">
         <h2>📋 Search History</h2>
-        <p>View your previous medicine searches here.</p>
+        <p>
+          View your previous medicine searches here.
+        </p>
       </div>
     </div>
   );
