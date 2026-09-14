@@ -1,4 +1,5 @@
-
+require("dotenv").config();
+require("dns").setServers(["8.8.8.8", "1.1.1.1"]);
 const searchHistoryRoutes = require("./routes/searchHistoryRoutes");
 const stockRoutes = require("./routes/stockRoutes");
 const testRoutes = require("./routes/testRoutes");
@@ -20,7 +21,7 @@ app.use("/api/test", testRoutes);
 app.use("/api/history", searchHistoryRoutes);
 app.use("/api/stock", stockRoutes);
 // MongoDB Connection
-mongoose.connect("mongodb://127.0.0.1:27017/medikey")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully");
   })
